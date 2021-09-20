@@ -1,0 +1,20 @@
+package com.company;
+
+public class StringAndConcat {
+    public static void main(String[] args) {
+      
+// string and primitive concat
+       int age = 30;
+        System.out.println(age);
+
+        String Agewise = "This is the age requested and the value is: ";
+
+        System.out.println(Agewise + age );
+
+         //.concat() method
+
+Agewise.concat(age+"");
+        System.out.println(Agewise.concat(age+""));
+
+    }
+}
