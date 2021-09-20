@@ -1,0 +1,14 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Playing around Java");
+        System.out.println("Java we shall conquer you");
+        System.out.println("Java we have conquer you");
+        System.out.println("Java it is well with you");
+        System.out.println("Java i will  know you");
+        System.out.println("Java i have conquered you");
+        System.out.println("Java we shall conquer you");
+    }
+}
