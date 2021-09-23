@@ -14,15 +14,18 @@ public class Javamethods {
      */
     public void verVisitors() {
         Scanner inputval = new Scanner(System.in);
-        String userInput = "testify";
+        String userInput = "";
         while(true){
+            System.out.println("Type \"Testify\" to be welcomed to class");
+            userInput = inputval.nextLine();
         if (userInput.equalsIgnoreCase("testify")) {
             System.out.println("You are welcome to testify Training Class");
-            userInput = inputval.nextLine();
-            continue;
+            break;
+
         }else if(!userInput.equalsIgnoreCase("testify")){
             System.out.println("You are not welcome to testify training class as you did not write Testify");
-break;
+            continue;
+
         }
     }
 }}
