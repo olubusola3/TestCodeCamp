@@ -26,7 +26,7 @@ public class ReSizeClass {
         //Locate resizable element's bottom-right corner.
         WebElement resizeElement = driver.findElement(By.xpath("//body/div[@id='resizable']/div[1]"));
         Actions resize = new Actions(driver);
-        resize.clickAndHold(resizeElement).moveByOffset(250, 195).build().perform();
+        resize.clickAndHold(resizeElement).moveByOffset(100, 60).build().perform();
 
         }
 }
