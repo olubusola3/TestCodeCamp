@@ -41,10 +41,10 @@ public class TestProjKonga {
       driver.findElement(By.xpath("//a[contains(text(),'Notebooks')]")).click();
      // JavascriptExecutor ja = (JavascriptExecutor) driver;
     //  ja.executeScript("window.scrollBy(0,500)");
-       // adding item to cart
-        Thread.sleep(5000);
-        JavascriptExecutor ja = (JavascriptExecutor) driver;
+       // Adding item to cart
+           JavascriptExecutor ja = (JavascriptExecutor) driver;
           ja.executeScript("window.scrollBy(0,500)");
+        Thread.sleep(5000);
      String carttext = driver.findElement(By.xpath("//body/div[@id='__next']/div[1]/section[1]/div[3]/section[1]/main[1]/section[2]/section[1]/section[1]/section[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/form[1]/div[4]/button[1]")).getText();
         System.out.println(carttext);
   //  driver.findElement(By.xpath("//body/div[@id='__next']/div[1]/section[1]/div[3]/section[1]/main[1]/section[2]/section[1]/section[1]/section[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/form[1]/div[4]/button[1]")).click();
@@ -74,8 +74,29 @@ driver.findElement(By.xpath("//main[@id='mainContent']/section[@class='_8d917_1i
         Select lgalist = new Select(lga);
         lgalist.selectByValue("757");
         driver.findElement(By.xpath("/html//section[@id='app-content-wrapper']/div[@class='c6dfe_HidJc']/section[@class='_0863a_3x99A']/section//form[@method='POST']//button[@name='saveDeliveryAddress']")).click();
-
-
+        //payment Options
+        driver.findElement(By.xpath("//main[@id='mainContent']/form[@action='/checkout/complete-order']//section[@class='_4b230_19Wk8 _651d7_qAjL2 b4565_PwzUY']//div[@class='_83d32_380t6']/form[@method='POST']/ul[@class='bf048_3QYmx']/li[@class='_54332_1WUdf fd05c_2n8o2']/div[@class='_2aac2_3bwnD']/button[@name='selectPaymentMethod']")).click();
+        Thread.sleep(2000);
+        JavascriptExecutor jaw = (JavascriptExecutor) driver;
+        jaw.executeScript("window.scrollBy(0,500)");
+        driver.findElement(By.xpath("/html//main[@id='mainContent']/form[@action='/checkout/complete-order']//section[@class='_4b230_19Wk8 _651d7_qAjL2 b4565_PwzUY']//button[@name='placeOrder']")).click();
+       //selecting card payment
+        driver.findElement(By.xpath("//div[@id='channel-template']/div[@class='data-card__content']/div/div[2]/button//span[@class='payment-option-info']")).click();
+      // inputting card details
+        driver.findElement(By.xpath("/html//input[@id='card-number']")).sendKeys("1234 5678 9008 8");
+        driver.findElement(By.xpath("/html//input[@id='expiry']")).sendKeys("12/29");
+        driver.findElement(By.xpath("/html//input[@id='cvv']")).sendKeys("123");
+        driver.findElement(By.xpath("/html//input[@id='card-pin-new']")).click();
+        driver.findElement(By.cssSelector("#keypads [value='8']")).click();
+        driver.findElement(By.cssSelector("#keypads [value='8']")).click();
+        driver.findElement(By.cssSelector("#keypads [value='8']")).click();
+        driver.findElement(By.cssSelector("#keypads [value='8']")).click();
+        driver.findElement(By.xpath("/html//button[@id='validateCardForm']")).click();
+        System.out.println("*************Invalid card number*****************");
+        //Close the iFrame that displays the input card Modal
+        driver.findElement(By.xpath("//section[@class='initiate']/section[@class='page-container']/section[@class='konga-pg-sdk']//aside[@class='data-card__close']")).click();
+        //Quit the browser. This is the end of Konga
+        driver.quit();
 
 
 
